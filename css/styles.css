@@ -125,6 +125,29 @@ section {
     color: #fff;
 }
 
+.btn-primary {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--secondary-color);
+    color: white !important;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+    background-color: #e76f51;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: white !important;
+}
+
 .subtitle {
     font-size: 1.2rem;
     color: #666;
@@ -478,6 +501,7 @@ nav.scrolled .nav-links a {
     border-radius: 8px;
     box-shadow: var(--shadow);
     margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .host-image {
@@ -485,17 +509,20 @@ nav.scrolled .nav-links a {
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .host-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .host-details {
     flex: 1;
     text-align: left;
+    min-width: 250px;
 }
 
 .host-title {
@@ -783,6 +810,203 @@ footer {
         flex-direction: column;
         text-align: center;
     }
+    
+    .host-card {
+        justify-content: center;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .host-image {
+        margin-bottom: 1rem;
+    }
+    
+    .host-details {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 3rem 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .gallery-grid,
+    .amenities-grid,
+    .advantages,
+    .activity-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .lodge-capacity {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+    
+    .lodge-capacity i {
+        margin-left: 8px;
+    }
+}
+
+/* Styles pour le carrousel d'images */
+.image-carousel-container {
+    margin: 4rem 0;
+    padding: 1rem 0;
+}
+
+.image-carousel-container h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.image-carousel {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.carousel-control:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+/* Responsive pour le carrousel */
+@media (max-width: 768px) {
+    .image-carousel {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-carousel {
+        height: 250px;
+    }
+    
+    .carousel-control {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+}
+
+/* Bouton réserver dans la navigation */
+.btn-reserve {
+    background-color: var(--secondary-color);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.btn-reserve:hover {
+    background-color: #e76f51;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+nav.scrolled .btn-reserve {
+    background-color: var(--secondary-color);
+    color: white !important;
+}
+
+/* Style pour les informations de capacité du lodge */
+.lodge-capacity {
+    margin-bottom: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.lodge-capacity p {
+    margin-bottom: 0;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.lodge-capacity i {
+    margin-right: 5px;
+    margin-left: 15px;
+    color: var(--secondary-color);
+}
+
+.lodge-capacity i:first-child {
+    margin-left: 0;
 }
 
 /* Lightbox */
@@ -927,6 +1151,16 @@ footer {
         padding: 0.5rem;
         background: rgba(0, 0, 0, 0.8);
     }
+    
+    .host-card {
+        justify-content: center;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .host-image {
+        margin-bottom: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -948,132 +1182,13 @@ footer {
     .activity-cards {
         grid-template-columns: 1fr;
     }
-}
-
-/* Styles pour le carrousel d'images */
-.image-carousel-container {
-    margin: 4rem 0;
-    padding: 1rem 0;
-}
-
-.image-carousel-container h3 {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.image-carousel {
-    position: relative;
-    width: 90%;
-    max-width: 1000px;
-    height: 500px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-}
-
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease;
-    height: 100%;
-}
-
-.carousel-item {
-    min-width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.carousel-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.7);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: var(--transition);
-    z-index: 10;
-}
-
-.carousel-control:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-.carousel-control.prev {
-    left: 10px;
-}
-
-.carousel-control.next {
-    right: 10px;
-}
-
-/* Responsive pour le carrousel */
-@media (max-width: 768px) {
-    .image-carousel {
-        height: 350px;
-    }
-}
-
-@media (max-width: 480px) {
-    .image-carousel {
-        height: 250px;
+    
+    .lodge-capacity {
+        font-size: 0.9rem;
+        padding: 8px 15px;
     }
     
-    .carousel-control {
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
+    .lodge-capacity i {
+        margin-left: 8px;
     }
-}
-
-/* Bouton réserver dans la navigation */
-.btn-reserve {
-    background-color: var(--secondary-color);
-    color: white !important;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-}
-
-.btn-reserve:hover {
-    background-color: #e76f51;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-nav.scrolled .btn-reserve {
-    background-color: var(--secondary-color);
-    color: white !important;
 } 
