@@ -962,12 +962,14 @@ footer {
     display: flex;
     transition: transform 0.5s ease;
     height: 100%;
+    width: 700%; /* 7 images x 100% */
 }
 
 .carousel-item {
-    min-width: 100%;
+    width: calc(100% / 7); /* 100% divisé par le nombre d'images */
     height: 100%;
     position: relative;
+    flex: 0 0 auto;
 }
 
 .carousel-item img {
