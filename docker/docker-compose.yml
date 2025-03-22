@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  webserver:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:80"
+      - "8443:443"  # Port HTTPS si nécessaire
+    volumes:
+      - ../:/var/www/html
+      - ../css:/var/www/html/css:ro
+      - ../js:/var/www/html/js:ro
+      - ../images:/var/www/html/images
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+      - PHP_DISPLAY_ERRORS=1
+      - PHP_DISPLAY_STARTUP_ERRORS=1
+      - PHP_ERROR_REPORTING=E_ALL
+    restart: always
+    container_name: lodge_dashboard
+    networks:
+      - lodge_network
+
+networks:
+  lodge_network:
+    driver: bridge 

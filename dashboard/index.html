@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Le Lodge de Sillans</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Dashboard</h2>
+                <p>Le Lodge de Sillans</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" data-section="hero" class="active"><i class="fas fa-home"></i> Hero</a></li>
+                    <li><a href="#" data-section="lodge"><i class="fas fa-house"></i> Le Lodge</a></li>
+                    <li><a href="#" data-section="gallery"><i class="fas fa-images"></i> Galerie</a></li>
+                    <li><a href="#" data-section="advantages"><i class="fas fa-star"></i> Avantages</a></li>
+                    <li><a href="#" data-section="testimonials"><i class="fas fa-comment"></i> Témoignages</a></li>
+                    <li><a href="#" data-section="host"><i class="fas fa-user"></i> Hôte</a></li>
+                    <li><a href="#" data-section="activities"><i class="fas fa-map-marker-alt"></i> Activités</a></li>
+                    <li><a href="#" data-section="faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="save-changes" class="btn-save"><i class="fas fa-save"></i> Sauvegarder</button>
+                <button id="preview-site" class="btn-preview"><i class="fas fa-eye"></i> Voir le site</button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="content-header">
+                <h1>Éditeur de Contenu</h1>
+                <div class="actions">
+                    <button id="apply-changes" class="btn-apply">Appliquer les changements</button>
+                </div>
+            </header>
+
+            <div class="edit-sections">
+                <!-- Section Hero -->
+                <section id="hero-section" class="edit-section active">
+                    <h2>Section Hero</h2>
+                    <div class="form-group">
+                        <label for="hero-title">Titre principal</label>
+                        <textarea id="hero-title" rows="2" data-target=".hero-content h1">Séjournez dans un havre de paix en Provence</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="hero-subtitle">Sous-titre</label>
+                        <textarea id="hero-subtitle" rows="2" data-target=".hero-content h2">Réservez sans intermédiaire et profitez pleinement de votre séjour</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="hero-description">Description</label>
+                        <textarea id="hero-description" data-target=".hero-content p">Piscine privée, cadre verdoyant, confort et sérénité à deux pas du village</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="hero-image">Image d'arrière-plan (URL)</label>
+                        <input type="text" id="hero-image" data-target=".hero" data-attr="background-image" value="url('../images/hero.jpg')">
+                        <div class="file-upload">
+                            <label for="hero-image-upload">ou télécharger une image</label>
+                            <input type="file" id="hero-image-upload" accept="image/*">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Lodge -->
+                <section id="lodge-section" class="edit-section">
+                    <h2>Section Le Lodge</h2>
+                    <div class="form-group">
+                        <label for="lodge-title">Titre de section</label>
+                        <input type="text" id="lodge-title" data-target=".lodge-presentation h2" value="Un Lodge de Charme en Pleine Nature">
+                    </div>
+                    <div class="form-group">
+                        <label for="lodge-subtitle">Sous-titre</label>
+                        <textarea id="lodge-subtitle" data-target=".lodge-presentation .subtitle">Découvrez notre mini lodge de 28m² avec mezzanine, pensé pour votre confort et votre détente.</textarea>
+                    </div>
+
+                    <h3>Équipements</h3>
+                    <div class="repeatable-container" id="amenities-container">
+                        <div class="repeatable-item">
+                            <div class="form-group icon-field" style="display: none;">
+                                <label>Icône</label>
+                                <input type="text" class="amenity-icon" data-target=".amenity-card:nth-child(1) i" data-attr="class" value="fas fa-swimming-pool" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Titre</label>
+                                <input type="text" class="amenity-title" data-target=".amenity-card:nth-child(1) h3" value="Piscine Privée">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="amenity-desc" data-target=".amenity-card:nth-child(1) p">Profitez d'une piscine rien que pour vous, dans un cadre verdoyant et paisible</textarea>
+                            </div>
+                        </div>
+                        <div class="repeatable-item">
+                            <div class="form-group icon-field" style="display: none;">
+                                <label>Icône</label>
+                                <input type="text" class="amenity-icon" data-target=".amenity-card:nth-child(2) i" data-attr="class" value="fas fa-bed" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Titre</label>
+                                <input type="text" class="amenity-title" data-target=".amenity-card:nth-child(2) h3" value="Lodge Confortable">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="amenity-desc" data-target=".amenity-card:nth-child(2) p">28m² avec mezzanine, parfaitement aménagés pour accueillir 1 à 4 personnes</textarea>
+                            </div>
+                        </div>
+                        <div class="repeatable-item">
+                            <div class="form-group icon-field" style="display: none;">
+                                <label>Icône</label>
+                                <input type="text" class="amenity-icon" data-target=".amenity-card:nth-child(3) i" data-attr="class" value="fas fa-utensils" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Titre</label>
+                                <input type="text" class="amenity-title" data-target=".amenity-card:nth-child(3) h3" value="Cuisine Équipée">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="amenity-desc" data-target=".amenity-card:nth-child(3) p">Tout le nécessaire pour préparer vos repas dans un espace fonctionnel</textarea>
+                            </div>
+                        </div>
+                        <div class="repeatable-item">
+                            <div class="form-group icon-field" style="display: none;">
+                                <label>Icône</label>
+                                <input type="text" class="amenity-icon" data-target=".amenity-card:nth-child(4) i" data-attr="class" value="fas fa-wifi" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Titre</label>
+                                <input type="text" class="amenity-title" data-target=".amenity-card:nth-child(4) h3" value="Wifi Haut Débit">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="amenity-desc" data-target=".amenity-card:nth-child(4) p">Restez connecté pendant votre séjour grâce à une connexion internet stable</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Galerie -->
+                <section id="gallery-section" class="edit-section">
+                    <h2>Section Galerie</h2>
+                    <h3>Images du carrousel</h3>
+                    <div class="repeatable-container" id="carousel-container">
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="carousel-image-src" data-target=".carousel-item:nth-child(1) img" data-attr="src" value="images/cuisine-entiere-1.jpg">
+                                <div class="file-upload">
+                                    <label>Télécharger l'image</label>
+                                    <input type="file" class="carousel-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif</label>
+                                <input type="text" class="carousel-image-alt" data-target=".carousel-item:nth-child(1) img" data-attr="alt" value="Cuisine entière du lodge">
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="carousel-caption" data-target=".carousel-item:nth-child(1) .carousel-caption" value="Cuisine entière">
+                            </div>
+                        </div>
+                        <!-- Les autres éléments du carrousel peuvent être ajoutés dynamiquement -->
+                        <button class="btn-add" id="add-carousel-item"><i class="fas fa-plus"></i> Ajouter une image</button>
+                    </div>
+
+                    <h3>Galerie Photos</h3>
+                    <div class="repeatable-container" id="gallery-items-container">
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(1) img" data-attr="src" value="images/cuisine-entiere-1.jpg">
+                                <div class="file-upload">
+                                    <label>Télécharger l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(1) img" data-attr="alt" value="Cuisine entière du lodge">
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(1) .gallery-caption" value="Cuisine entière">
+                            </div>
+                        </div>
+                        <!-- Les autres éléments de la galerie peuvent être ajoutés dynamiquement -->
+                        <button class="btn-add" id="add-gallery-item"><i class="fas fa-plus"></i> Ajouter une image</button>
+                    </div>
+                </section>
+
+                <!-- Section Avantages -->
+                <section id="advantages-section" class="edit-section">
+                    <h2>Section Avantages</h2>
+                    <div class="form-group">
+                        <label for="advantages-title">Titre de section</label>
+                        <input type="text" id="advantages-title" data-target=".direct-booking h2" value="Pourquoi Réserver en Direct ?">
+                    </div>
+
+                    <h3>Liste des avantages</h3>
+                    <div class="repeatable-container" id="advantages-container">
+                        <div class="repeatable-item">
+                            <div class="form-group icon-field" style="display: none;">
+                                <label>Icône</label>
+                                <input type="text" class="advantage-icon" data-target=".advantage-card:nth-child(1) i" data-attr="class" value="fas fa-piggy-bank" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Titre</label>
+                                <input type="text" class="advantage-title" data-target=".advantage-card:nth-child(1) h3" value="Économisez jusqu'à 15%">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="advantage-desc" data-target=".advantage-card:nth-child(1) p">Sans frais de plateforme, vous bénéficiez de tarifs plus avantageux pour le même séjour de qualité</textarea>
+                            </div>
+                        </div>
+                        <div class="repeatable-item">
+                            <div class="form-group icon-field" style="display: none;">
+                                <label>Icône</label>
+                                <input type="text" class="advantage-icon" data-target=".advantage-card:nth-child(2) i" data-attr="class" value="fas fa-comments" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Titre</label>
+                                <input type="text" class="advantage-title" data-target=".advantage-card:nth-child(2) h3" value="Contact Direct avec l'Hôte">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="advantage-desc" data-target=".advantage-card:nth-child(2) p">Communication simplifiée et service personnalisé pour répondre à tous vos besoins</textarea>
+                            </div>
+                        </div>
+                        <div class="repeatable-item">
+                            <div class="form-group icon-field" style="display: none;">
+                                <label>Icône</label>
+                                <input type="text" class="advantage-icon" data-target=".advantage-card:nth-child(3) i" data-attr="class" value="fas fa-calendar-alt" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Titre</label>
+                                <input type="text" class="advantage-title" data-target=".advantage-card:nth-child(3) h3" value="Flexibilité Accrue">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="advantage-desc" data-target=".advantage-card:nth-child(3) p">Possibilité d'arrangements personnalisés pour les arrivées, départs et demandes spéciales</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Témoignages -->
+                <section id="testimonials-section" class="edit-section">
+                    <h2>Section Témoignages</h2>
+                    <div class="form-group">
+                        <label for="testimonials-title">Titre de section</label>
+                        <input type="text" id="testimonials-title" data-target=".testimonials h3" value="Ils ont adoré leur séjour">
+                    </div>
+
+                    <h3>Témoignages clients</h3>
+                    <div class="repeatable-container" id="testimonials-container">
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Texte du témoignage</label>
+                                <textarea class="testimonial-text" data-target=".testimonial:nth-child(1) p:not(.testimonial-author p)">"Un véritable havre de paix ! La piscine privée est un luxe dont nous avons profité chaque jour. Éric est un hôte attentionné qui nous a donné d'excellents conseils pour découvrir la région."</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Auteur</label>
+                                <input type="text" class="testimonial-author" data-target=".testimonial:nth-child(1) .testimonial-author p" value="Marie et Pierre, Juillet 2023">
+                            </div>
+                            <div class="form-group">
+                                <label>Nombre d'étoiles (1-5)</label>
+                                <input type="number" min="1" max="5" class="testimonial-stars" data-target=".testimonial:nth-child(1) .stars" data-attr="data-stars" value="5">
+                            </div>
+                        </div>
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Texte du témoignage</label>
+                                <textarea class="testimonial-text" data-target=".testimonial:nth-child(2) p:not(.testimonial-author p)">"Lodge parfaitement équipé et décoré avec goût. L'endroit est calme et reposant, idéal pour se ressourcer. Nous reviendrons sans hésiter !"</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Auteur</label>
+                                <input type="text" class="testimonial-author" data-target=".testimonial:nth-child(2) .testimonial-author p" value="Sophie et Jean, Août 2023">
+                            </div>
+                            <div class="form-group">
+                                <label>Nombre d'étoiles (1-5)</label>
+                                <input type="number" min="1" max="5" class="testimonial-stars" data-target=".testimonial:nth-child(2) .stars" data-attr="data-stars" value="5">
+                            </div>
+                        </div>
+                        <button class="btn-add" id="add-testimonial"><i class="fas fa-plus"></i> Ajouter un témoignage</button>
+                    </div>
+                </section>
+
+                <!-- Section Hôte -->
+                <section id="host-section" class="edit-section">
+                    <h2>Section Hôte</h2>
+                    <div class="form-group">
+                        <label for="host-title">Titre de section</label>
+                        <input type="text" id="host-title" data-target=".host-info h3" value="Votre Hôte Superhost">
+                    </div>
+                    <div class="form-group">
+                        <label for="host-name">Nom de l'hôte</label>
+                        <input type="text" id="host-name" data-target=".host-details h4" value="Éric">
+                    </div>
+                    <div class="form-group">
+                        <label for="host-status">Statut</label>
+                        <input type="text" id="host-status" data-target=".host-title" value="Superhost expérimenté">
+                    </div>
+                    <div class="form-group">
+                        <label for="host-description">Description</label>
+                        <textarea id="host-description" rows="4" data-target=".host-details p:not(.host-title)">Passionné par ma région, je serai ravi de vous accueillir dans mon lodge et de vous faire découvrir les trésors cachés de la Provence. Avec plus de 5 ans d'expérience dans l'hébergement touristique, je m'engage à rendre votre séjour inoubliable.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="host-image">Photo de l'hôte (URL)</label>
+                        <input type="text" id="host-image" data-target=".host-image img" data-attr="src" value="images/host.jpg">
+                        <div class="file-upload">
+                            <label for="host-image-upload">ou télécharger une image</label>
+                            <input type="file" id="host-image-upload" accept="image/*">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Activités -->
+                <section id="activities-section" class="edit-section">
+                    <h2>Section Activités</h2>
+                    <div class="form-group">
+                        <label for="location-title">Titre de section</label>
+                        <input type="text" id="location-title" data-target=".location h2" value="Un Emplacement Idéal en Provence">
+                    </div>
+                    <div class="form-group">
+                        <label for="activities-title">Sous-titre</label>
+                        <input type="text" id="activities-title" data-target=".activities h3" value="Découvrez les Alentours">
+                    </div>
+
+                    <h3>Activités à proximité</h3>
+                    <div class="repeatable-container" id="activities-container">
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="activity-image-src" data-target=".activity-card:nth-child(1) img" data-attr="src" value="images/cascade-1.jpg">
+                                <div class="file-upload">
+                                    <label>Télécharger l'image</label>
+                                    <input type="file" class="activity-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif</label>
+                                <input type="text" class="activity-image-alt" data-target=".activity-card:nth-child(1) img" data-attr="alt" value="Cascade de Sillans">
+                            </div>
+                            <div class="form-group">
+                                <label>Titre</label>
+                                <input type="text" class="activity-title" data-target=".activity-card:nth-child(1) h4" value="Cascade de Sillans">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="activity-desc" data-target=".activity-card:nth-child(1) p">À seulement 10 minutes à pied, découvrez cette magnifique chute d'eau de 42 mètres de haut.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section FAQ -->
+                <section id="faq-section" class="edit-section">
+                    <h2>Section FAQ</h2>
+                    <div class="form-group">
+                        <label for="faq-title">Titre de section</label>
+                        <input type="text" id="faq-title" data-target=".faq h2" value="Questions Fréquentes">
+                    </div>
+
+                    <h3>Questions et Réponses</h3>
+                    <div class="repeatable-container" id="faq-container">
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Question</label>
+                                <input type="text" class="faq-question-text" data-target=".faq-item:nth-child(1) .faq-question h3" value="Quelles sont les conditions d'annulation ?">
+                            </div>
+                            <div class="form-group">
+                                <label>Réponse</label>
+                                <textarea class="faq-answer-text" data-target=".faq-item:nth-child(1) .faq-answer p">Annulation gratuite jusqu'à 7 jours avant l'arrivée. Annulation entre 7 jours et 48h avant l'arrivée : remboursement de 50%. Moins de 48h avant l'arrivée : non remboursable.</textarea>
+                            </div>
+                        </div>
+                        <button class="btn-add" id="add-faq-item"><i class="fas fa-plus"></i> Ajouter une question</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <div class="preview-panel">
+            <div class="preview-header">
+                <h2>Prévisualisation</h2>
+                <button id="toggle-preview" class="btn-toggle"><i class="fas fa-expand-alt"></i></button>
+            </div>
+            <div class="preview-container">
+                <iframe id="preview-frame" src="../index.html"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ajout d'un indicateur de chargement -->
+    <div id="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Traitement en cours...</p>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html> 

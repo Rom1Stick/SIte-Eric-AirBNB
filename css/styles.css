@@ -22,7 +22,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: #fff;
@@ -629,7 +629,7 @@ nav.scrolled .nav-links a {
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .price-info {
@@ -796,19 +796,103 @@ footer {
     color: var(--secondary-color);
 }
 
+/* Media queries */
+@media (max-width: 1024px) {
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .host-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .host-details {
+        text-align: center;
+    }
+}
+
 @media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        width: 90%;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        box-shadow: var(--shadow);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links a {
+        color: var(--text-color);
+        display: block;
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .testimonial-carousel {
+        flex-direction: column;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
     
-    .footer-contact p {
-        justify-content: center;
-    }
-    
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+    }
+    
+    .equipment {
+        padding: 2rem;
+    }
+    
+    .equipment-details ul {
+        padding: 1rem;
+    }
+    
+    .equipment-details li {
+        font-size: 0.9rem;
+    }
+    
+    .gallery-item {
+        height: 200px;
+    }
+    
+    .gallery-caption {
+        transform: translateY(0);
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        background: rgba(0, 0, 0, 0.8);
     }
     
     .host-card {
@@ -819,10 +903,6 @@ footer {
     
     .host-image {
         margin-bottom: 1rem;
-    }
-    
-    .host-details {
-        text-align: center;
     }
 }
 
@@ -1051,144 +1131,4 @@ nav.scrolled .btn-reserve {
     font-size: 2rem;
     cursor: pointer;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Media Queries */
-@media (max-width: 1024px) {
-    .booking-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .host-card {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .host-details {
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-    
-    h2 {
-        font-size: 2rem;
-    }
-    
-    .container {
-        width: 90%;
-    }
-    
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #fff;
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-        box-shadow: var(--shadow);
-    }
-    
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .nav-links a {
-        color: var(--text-color);
-        display: block;
-        padding: 1rem;
-        width: 100%;
-        text-align: center;
-    }
-    
-    .hamburger {
-        display: flex;
-    }
-    
-    .testimonial-carousel {
-        flex-direction: column;
-    }
-    
-    .form-row {
-        flex-direction: column;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .equipment {
-        padding: 2rem;
-    }
-    
-    .equipment-details ul {
-        padding: 1rem;
-    }
-    
-    .equipment-details li {
-        font-size: 0.9rem;
-    }
-    
-    .gallery-item {
-        height: 200px;
-    }
-    
-    .gallery-caption {
-        transform: translateY(0);
-        font-size: 0.8rem;
-        padding: 0.5rem;
-        background: rgba(0, 0, 0, 0.8);
-    }
-    
-    .host-card {
-        justify-content: center;
-        text-align: center;
-        padding: 1.5rem;
-    }
-    
-    .host-image {
-        margin-bottom: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    section {
-        padding: 3rem 0;
-    }
-    
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .hero-content h2 {
-        font-size: 1.5rem;
-    }
-    
-    .gallery-grid,
-    .amenities-grid,
-    .advantages,
-    .activity-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .lodge-capacity {
-        font-size: 0.9rem;
-        padding: 8px 15px;
-    }
-    
-    .lodge-capacity i {
-        margin-left: 8px;
-    }
 } 

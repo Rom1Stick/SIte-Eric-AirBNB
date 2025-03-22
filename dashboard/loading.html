@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test du Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        h1 {
+            color: #3a7ca5;
+            text-align: center;
+        }
+        
+        .container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .instructions {
+            margin-bottom: 30px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #3a7ca5;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .btn:hover {
+            background-color: #2c5f8e;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test du Dashboard de Gestion de Contenu</h1>
+    
+    <div class="container">
+        <div class="instructions">
+            <h2>Instructions pour utiliser le dashboard</h2>
+            <ol>
+                <li>Assurez-vous d'exécuter ce site sur un serveur web (comme Apache, Nginx ou un serveur de développement PHP).</li>
+                <li>Le dashboard a besoin de PHP pour fonctionner correctement et sauvegarder les modifications.</li>
+                <li>Ouvrez le <a href="index.html" class="btn">Dashboard</a> pour commencer à éditer le contenu du site.</li>
+                <li>Dans le dashboard, vous pouvez :
+                    <ul>
+                        <li>Modifier les textes, titres et descriptions</li>
+                        <li>Changer les images</li>
+                        <li>Ajouter/supprimer des éléments (témoignages, FAQ, etc.)</li>
+                        <li>Prévisualiser les changements en temps réel</li>
+                        <li>Sauvegarder les modifications pour les appliquer au site réel</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="note">
+            <strong>Note importante :</strong> Pour que la fonctionnalité de sauvegarde fonctionne correctement, le fichier PHP <code>save.php</code> doit avoir les permissions nécessaires pour écrire dans les fichiers du site. Assurez-vous que le serveur web a les droits d'écriture sur le dossier du site.
+        </div>
+        
+        <h3>Problèmes connus et solutions</h3>
+        <ul>
+            <li><strong>Iframe ne charge pas :</strong> Si la prévisualisation ne s'affiche pas, c'est probablement dû à la politique de sécurité de Same Origin. Assurez-vous d'accéder au dashboard via un serveur web et non en ouvrant directement le fichier HTML.</li>
+            <li><strong>Erreurs de sauvegarde :</strong> Vérifiez que PHP est bien installé et configuré sur votre serveur et que les permissions d'écriture sont correctement définies.</li>
+        </ul>
+    </div>
+</body>
+</html> 
