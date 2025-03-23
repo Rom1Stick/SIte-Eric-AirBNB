@@ -647,71 +647,67 @@ function updateStars(starsElement, count) {
     }
 }
 
-// Sauvegarde des modifications
+// Fonction pour initialiser la sauvegarde des modifications
 function initSaveChanges() {
-    document.getElementById('save-changes').addEventListener('click', function(e) {
-        e.preventDefault(); // Empêcher le comportement par défaut
-        showSaveConfirmationModal(); // Afficher la modal de confirmation
+    document.getElementById('save-changes').addEventListener('click', function() {
+        showSaveConfirmationModal();
     });
 }
 
-// Sauvegarde des modifications dans le fichier
-function saveChangesToFile() {
-    const previewFrame = document.getElementById('preview-frame');
-    const frameDoc = previewFrame.contentDocument || previewFrame.contentWindow.document;
-    
-    try {
-        // Obtenir le contenu HTML modifié
-        const htmlContent = frameDoc.documentElement.outerHTML;
-        
-        // Préparer les données pour l'envoi
-        const data = {
-            html_content: htmlContent,
-            file_path: '../index.html' // Chemin relatif du fichier à sauvegarder
-        };
-        
-        // Envoyer les données au serveur
-        fetch('save.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(result => {
-            // Masquer l'indicateur de chargement
-            document.getElementById('loading-overlay').style.display = 'none';
-            
-            if (result.success) {
-                showNotification('Modifications sauvegardées avec succès !');
-                
-                // Rafraîchir la prévisualisation
-                previewFrame.contentWindow.location.reload();
-                
-                // Recharger la page du dashboard après 1 seconde
-                setTimeout(() => {
-                    window.location.reload();
-                }, 1000);
-            } else {
-                showNotification('Erreur lors de la sauvegarde : ' + (result.error || 'Erreur inconnue'), 'error');
-            }
-        })
-        .catch(error => {
-            // Masquer l'indicateur de chargement
-            document.getElementById('loading-overlay').style.display = 'none';
-            
-            console.error('Erreur:', error);
-            showNotification('Erreur de connexion au serveur. Vérifiez que le serveur PHP est actif.', 'error');
-        });
-    } catch (e) {
-        // Masquer l'indicateur de chargement
-        document.getElementById('loading-overlay').style.display = 'none';
-        
-        console.error('Erreur lors de la sauvegarde:', e);
-        showNotification('Erreur lors de la préparation des données. Vérifiez la console.', 'error');
-    }
+// Gestion de la modal de confirmation de sauvegarde
+const saveConfirmationModal = document.getElementById('save-confirmation-modal');
+const saveConfirmationCheckbox = document.getElementById('save-confirmation-checkbox');
+const saveConfirmButton = document.getElementById('save-confirm');
+const saveCancelButton = document.getElementById('save-cancel');
+const saveChangesButton = document.getElementById('save-changes');
+
+// Fonction pour afficher la modal de confirmation
+function showSaveConfirmationModal() {
+    saveConfirmationModal.style.display = 'flex';
+    saveConfirmationCheckbox.checked = false;
+    saveConfirmButton.disabled = true;
 }
+
+// Fonction pour masquer la modal de confirmation
+function hideSaveConfirmationModal() {
+    saveConfirmationModal.style.display = 'none';
+    saveConfirmationCheckbox.checked = false;
+    saveConfirmButton.disabled = true;
+}
+
+// Écouteur d'événement pour la case à cocher
+saveConfirmationCheckbox.addEventListener('change', function() {
+    saveConfirmButton.disabled = !this.checked;
+});
+
+// Écouteur d'événement pour le bouton d'annulation
+saveCancelButton.addEventListener('click', hideSaveConfirmationModal);
+
+// Écouteur d'événement pour le bouton de confirmation
+saveConfirmButton.addEventListener('click', function() {
+    if (saveConfirmationCheckbox.checked) {
+        // Masquer la modal de confirmation
+        hideSaveConfirmationModal();
+        
+        // Afficher l'indicateur de chargement
+        document.getElementById('loading-overlay').style.display = 'flex';
+        
+        // Appliquer d'abord les modifications à la prévisualisation
+        applyChangesToPreview();
+        
+        // Attendre un peu pour que les modifications soient appliquées
+        setTimeout(() => {
+            saveChangesToFile();
+        }, 1000);
+    }
+});
+
+// Fermer la modal en cliquant en dehors
+saveConfirmationModal.addEventListener('click', function(e) {
+    if (e.target === this) {
+        hideSaveConfirmationModal();
+    }
+});
 
 function openImageSelectorModal() {
     const modal = document.getElementById('image-selector-modal');
@@ -1528,52 +1524,60 @@ function initGallery() {
     }
 }
 
-// Gestion de la modal de confirmation de sauvegarde
-const saveConfirmationModal = document.getElementById('save-confirmation-modal');
-const saveConfirmationCheckbox = document.getElementById('save-confirmation-checkbox');
-const saveConfirmButton = document.getElementById('save-confirm');
-const saveCancelButton = document.getElementById('save-cancel');
-const saveChangesButton = document.getElementById('save-changes');
-
-// Fonction pour afficher la modal de confirmation
-function showSaveConfirmationModal() {
-    saveConfirmationModal.style.display = 'flex';
-    saveConfirmationCheckbox.checked = false;
-    saveConfirmButton.disabled = true;
-}
-
-// Fonction pour masquer la modal de confirmation
-function hideSaveConfirmationModal() {
-    saveConfirmationModal.style.display = 'none';
-    saveConfirmationCheckbox.checked = false;
-    saveConfirmButton.disabled = true;
-}
-
-// Écouteur d'événement pour la case à cocher
-saveConfirmationCheckbox.addEventListener('change', () => {
-    saveConfirmButton.disabled = !saveConfirmationCheckbox.checked;
-});
-
-// Écouteur d'événement pour le bouton Annuler
-saveCancelButton.addEventListener('click', hideSaveConfirmationModal);
-
-// Écouteur d'événement pour le bouton de fermeture de la modal
-saveConfirmationModal.querySelector('.modal-close').addEventListener('click', hideSaveConfirmationModal);
-
-// Écouteur d'événement pour le bouton de confirmation
-saveConfirmButton.addEventListener('click', () => {
-    if (saveConfirmationCheckbox.checked) {
-        // Afficher l'indicateur de chargement
-        document.getElementById('loading-overlay').style.display = 'flex';
+// Sauvegarde des modifications dans le fichier
+function saveChangesToFile() {
+    const previewFrame = document.getElementById('preview-frame');
+    const frameDoc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+    
+    try {
+        // Obtenir le contenu HTML modifié
+        const htmlContent = frameDoc.documentElement.outerHTML;
         
-        // Appliquer d'abord les modifications à la prévisualisation
-        applyChangesToPreview();
+        // Préparer les données pour l'envoi
+        const data = {
+            html_content: htmlContent,
+            file_path: '../index.html' // Chemin relatif du fichier à sauvegarder
+        };
         
-        // Attendre un peu avant de sauvegarder
-        setTimeout(() => {
-            saveChangesToFile();
-            // Masquer la modal de confirmation
-            hideSaveConfirmationModal();
-        }, 1000);
+        // Envoyer les données au serveur
+        fetch('save.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            // Masquer l'indicateur de chargement
+            document.getElementById('loading-overlay').style.display = 'none';
+            
+            if (result.success) {
+                showNotification('Modifications sauvegardées avec succès !');
+                
+                // Rafraîchir la prévisualisation
+                previewFrame.contentWindow.location.reload();
+                
+                // Recharger la page du dashboard après 1 seconde
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000);
+            } else {
+                showNotification('Erreur lors de la sauvegarde : ' + (result.error || 'Erreur inconnue'), 'error');
+            }
+        })
+        .catch(error => {
+            // Masquer l'indicateur de chargement
+            document.getElementById('loading-overlay').style.display = 'none';
+            
+            console.error('Erreur:', error);
+            showNotification('Erreur de connexion au serveur. Vérifiez que le serveur PHP est actif.', 'error');
+        });
+    } catch (e) {
+        // Masquer l'indicateur de chargement
+        document.getElementById('loading-overlay').style.display = 'none';
+        
+        console.error('Erreur lors de la sauvegarde:', e);
+        showNotification('Erreur lors de la préparation des données. Vérifiez la console.', 'error');
     }
-}); 
+} 

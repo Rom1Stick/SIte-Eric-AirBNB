@@ -336,3 +336,23 @@
 [2025-03-23 16:36:19] Sauvegarde désactivée, l'image actuelle ne sera pas sauvegardée
 [2025-03-23 16:36:19] Copie de l'image de backup vers la cible
 [2025-03-23 16:36:19] Restauration réussie vers images/cuisine-entiere-1.jpg
+[2025-03-23 21:41:03] Début du processus de restauration d'image
+[2025-03-23 21:41:03] Chemin de l'image de backup: assets/images/backup/cuisine-entiere-1_20250323_135600.jpg
+[2025-03-23 21:41:03] Chemin cible: images/hero.jpg
+[2025-03-23 21:41:03] Sauvegarde activée: Non
+[2025-03-23 21:41:03] Chemin complet de backup: ../assets/images/backup/cuisine-entiere-1_20250323_135600.jpg
+[2025-03-23 21:41:03] Chemin complet cible: ../images/hero.jpg
+[2025-03-23 21:41:03] L'image cible existe déjà
+[2025-03-23 21:41:03] Sauvegarde désactivée, l'image actuelle ne sera pas sauvegardée
+[2025-03-23 21:41:03] Copie de l'image de backup vers la cible
+[2025-03-23 21:41:03] Restauration réussie vers images/hero.jpg
+[2025-03-23 21:41:36] Début du processus de restauration d'image
+[2025-03-23 21:41:36] Chemin de l'image de backup: assets/images/backup/hero_20250323_133356.jpg
+[2025-03-23 21:41:36] Chemin cible: images/hero.jpg
+[2025-03-23 21:41:36] Sauvegarde activée: Non
+[2025-03-23 21:41:36] Chemin complet de backup: ../assets/images/backup/hero_20250323_133356.jpg
+[2025-03-23 21:41:36] Chemin complet cible: ../images/hero.jpg
+[2025-03-23 21:41:36] L'image cible existe déjà
+[2025-03-23 21:41:36] Sauvegarde désactivée, l'image actuelle ne sera pas sauvegardée
+[2025-03-23 21:41:36] Copie de l'image de backup vers la cible
+[2025-03-23 21:41:36] Restauration réussie vers images/hero.jpg
