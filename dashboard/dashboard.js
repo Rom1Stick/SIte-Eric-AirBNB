@@ -649,16 +649,9 @@ function updateStars(starsElement, count) {
 
 // Sauvegarde des modifications
 function initSaveChanges() {
-    document.getElementById('save-changes').addEventListener('click', function() {
-        // Afficher l'indicateur de chargement
-        document.getElementById('loading-overlay').style.display = 'flex';
-        
-        // Appliquer d'abord les modifications à la prévisualisation
-        applyChangesToPreview();
-        
-        setTimeout(() => {
-            saveChangesToFile();
-        }, 1000); // Attendre 1 seconde pour que les modifications soient appliquées
+    document.getElementById('save-changes').addEventListener('click', function(e) {
+        e.preventDefault(); // Empêcher le comportement par défaut
+        showSaveConfirmationModal(); // Afficher la modal de confirmation
     });
 }
 
@@ -1533,4 +1526,54 @@ function initGallery() {
             }
         }
     }
-} 
+}
+
+// Gestion de la modal de confirmation de sauvegarde
+const saveConfirmationModal = document.getElementById('save-confirmation-modal');
+const saveConfirmationCheckbox = document.getElementById('save-confirmation-checkbox');
+const saveConfirmButton = document.getElementById('save-confirm');
+const saveCancelButton = document.getElementById('save-cancel');
+const saveChangesButton = document.getElementById('save-changes');
+
+// Fonction pour afficher la modal de confirmation
+function showSaveConfirmationModal() {
+    saveConfirmationModal.style.display = 'flex';
+    saveConfirmationCheckbox.checked = false;
+    saveConfirmButton.disabled = true;
+}
+
+// Fonction pour masquer la modal de confirmation
+function hideSaveConfirmationModal() {
+    saveConfirmationModal.style.display = 'none';
+    saveConfirmationCheckbox.checked = false;
+    saveConfirmButton.disabled = true;
+}
+
+// Écouteur d'événement pour la case à cocher
+saveConfirmationCheckbox.addEventListener('change', () => {
+    saveConfirmButton.disabled = !saveConfirmationCheckbox.checked;
+});
+
+// Écouteur d'événement pour le bouton Annuler
+saveCancelButton.addEventListener('click', hideSaveConfirmationModal);
+
+// Écouteur d'événement pour le bouton de fermeture de la modal
+saveConfirmationModal.querySelector('.modal-close').addEventListener('click', hideSaveConfirmationModal);
+
+// Écouteur d'événement pour le bouton de confirmation
+saveConfirmButton.addEventListener('click', () => {
+    if (saveConfirmationCheckbox.checked) {
+        // Afficher l'indicateur de chargement
+        document.getElementById('loading-overlay').style.display = 'flex';
+        
+        // Appliquer d'abord les modifications à la prévisualisation
+        applyChangesToPreview();
+        
+        // Attendre un peu avant de sauvegarder
+        setTimeout(() => {
+            saveChangesToFile();
+            // Masquer la modal de confirmation
+            hideSaveConfirmationModal();
+        }, 1000);
+    }
+}); 
