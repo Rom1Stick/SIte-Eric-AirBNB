@@ -1,0 +1,156 @@
+[2025-03-23 11:30:35] Début du traitement d'upload
+[2025-03-23 11:30:35] Fichier reçu: hero.jpg (image/jpeg, 815636 bytes)
+[2025-03-23 11:30:35] Type MIME détecté: image/jpeg
+[2025-03-23 11:30:35] Chemin original reçu: http://localhost:8080/images/hero.jpg
+[2025-03-23 11:30:35] Chemin nettoyé de l'URL: images/hero.jpg
+[2025-03-23 11:30:35] Vérification du chemin: ../images/hero.jpg
+[2025-03-23 11:30:35] Le fichier existe, remplacement activé
+[2025-03-23 11:30:35] Sauvegarde de l'ancienne image vers: ../assets/images/backup/hero_20250323_113035.jpg
+[2025-03-23 11:30:35] Ancienne image sauvegardée avec succès
+[2025-03-23 11:30:35] Ancienne image supprimée
+[2025-03-23 11:30:35] Nouvelle image utilisera le chemin: ../images/hero.jpg
+[2025-03-23 11:30:35] Tentative de déplacement du fichier téléchargé vers ../images/hero.jpg
+[2025-03-23 11:30:35] Déplacement réussi. Chemin de retour: images/hero.jpg
+[2025-03-23 11:31:45] Début du traitement d'upload
+[2025-03-23 11:31:45] Fichier reçu: logo2.jpg (image/jpeg, 10025 bytes)
+[2025-03-23 11:31:45] Type MIME détecté: image/jpeg
+[2025-03-23 11:31:45] Chemin original reçu: images/hero.jpg
+[2025-03-23 11:31:45] Vérification du chemin: ../images/hero.jpg
+[2025-03-23 11:31:45] Le fichier existe, remplacement activé
+[2025-03-23 11:31:45] Sauvegarde de l'ancienne image vers: ../assets/images/backup/hero_20250323_113145.jpg
+[2025-03-23 11:31:45] Ancienne image sauvegardée avec succès
+[2025-03-23 11:31:45] Ancienne image supprimée
+[2025-03-23 11:31:45] Nouvelle image utilisera le chemin: ../images/hero.jpg
+[2025-03-23 11:31:45] Tentative de déplacement du fichier téléchargé vers ../images/hero.jpg
+[2025-03-23 11:31:45] Déplacement réussi. Chemin de retour: images/hero.jpg
+[2025-03-23 11:40:06] Début du traitement d'upload
+[2025-03-23 11:40:06] Fichier reçu: hero.jpg (image/jpeg, 815636 bytes)
+[2025-03-23 11:40:06] Type MIME détecté: image/jpeg
+[2025-03-23 11:40:06] Chemin original reçu: assets/images/backup/hero_20250323_113145.jpg
+[2025-03-23 11:40:06] Vérification du chemin: ../assets/images/backup/hero_20250323_113145.jpg
+[2025-03-23 11:40:06] Le fichier existe, remplacement activé
+[2025-03-23 11:40:06] Sauvegarde de l'ancienne image vers: ../assets/images/backup/hero_20250323_113145_20250323_114006.jpg
+[2025-03-23 11:40:06] Ancienne image sauvegardée avec succès
+[2025-03-23 11:40:06] Ancienne image supprimée
+[2025-03-23 11:40:06] Nouvelle image utilisera le chemin: ../assets/images/backup/hero_20250323_113145.jpg
+[2025-03-23 11:40:06] Tentative de déplacement du fichier téléchargé vers ../assets/images/backup/hero_20250323_113145.jpg
+[2025-03-23 11:40:06] Déplacement réussi. Chemin de retour: assets/images/backup/hero_20250323_113145.jpg
+[2025-03-23 11:44:44] Début du traitement d'upload
+[2025-03-23 11:44:44] Fichier reçu: hero.jpg (image/jpeg, 815636 bytes)
+[2025-03-23 11:44:44] Type MIME détecté: image/jpeg
+[2025-03-23 11:44:44] Chemin original reçu: images/hero.jpg
+[2025-03-23 11:44:44] Vérification du chemin: ../images/hero.jpg
+[2025-03-23 11:44:44] Le fichier existe, remplacement activé
+[2025-03-23 11:44:44] Sauvegarde de l'ancienne image vers: ../assets/images/backup/hero_20250323_114444.jpg
+[2025-03-23 11:44:44] Ancienne image sauvegardée avec succès
+[2025-03-23 11:44:44] Ancienne image supprimée
+[2025-03-23 11:44:44] Nouvelle image utilisera le chemin: ../images/hero.jpg
+[2025-03-23 11:44:44] Tentative de déplacement du fichier téléchargé vers ../images/hero.jpg
+[2025-03-23 11:44:44] Déplacement réussi. Chemin de retour: images/hero.jpg
+[2025-03-23 11:49:25] Début du traitement d'upload
+[2025-03-23 11:49:25] Fichier reçu: velo.jpg (image/jpeg, 156041 bytes)
+[2025-03-23 11:49:25] Type MIME détecté: image/jpeg
+[2025-03-23 11:49:25] Chemin original reçu: images/hero.jpg
+[2025-03-23 11:49:25] Vérification du chemin: ../images/hero.jpg
+[2025-03-23 11:49:25] Le fichier existe, remplacement activé
+[2025-03-23 11:49:25] Sauvegarde de l'ancienne image vers: ../assets/images/backup/hero_20250323_114925.jpg
+[2025-03-23 11:49:25] Ancienne image sauvegardée avec succès
+[2025-03-23 11:49:25] Ancienne image supprimée
+[2025-03-23 11:49:25] Nouvelle image utilisera le chemin: ../images/hero.jpg
+[2025-03-23 11:49:25] Tentative de déplacement du fichier téléchargé vers ../images/hero.jpg
+[2025-03-23 11:49:25] Déplacement réussi. Chemin de retour: images/hero.jpg
+[2025-03-23 11:53:15] Début du traitement d'upload
+[2025-03-23 11:53:15] Fichier reçu: chambre-2-1.jpg (image/jpeg, 509475 bytes)
+[2025-03-23 11:53:15] Type MIME détecté: image/jpeg
+[2025-03-23 11:53:15] Chemin original reçu: images/hero.jpg
+[2025-03-23 11:53:15] Sauvegarde activée: Oui
+[2025-03-23 11:53:15] Vérification du chemin: ../images/hero.jpg
+[2025-03-23 11:53:15] Le fichier existe, remplacement activé
+[2025-03-23 11:53:15] L'image cible existe déjà
+[2025-03-23 11:53:15] Sauvegarde activée, création d'une copie
+[2025-03-23 11:53:15] Sauvegarde de l'image actuelle: ../images/hero.jpg vers ../assets/images/backup/hero_20250323_115315.jpg
+[2025-03-23 11:53:16] Ancienne image sauvegardée avec succès
+[2025-03-23 11:53:16] Ancienne image supprimée
+[2025-03-23 11:53:16] Nouvelle image utilisera le chemin: ../images/hero.jpg
+[2025-03-23 11:53:16] Tentative de déplacement du fichier téléchargé vers ../images/hero.jpg
+[2025-03-23 11:53:16] Déplacement réussi. Chemin de retour: images/hero.jpg
+[2025-03-23 12:01:51] Début du traitement d'upload
+[2025-03-23 12:01:51] Fichier reçu: unnamed (2).jpg (image/jpeg, 1252947 bytes)
+[2025-03-23 12:01:51] Type MIME détecté: image/jpeg
+[2025-03-23 12:01:51] Chemin original reçu: images/cuisine-entiere-1.jpg
+[2025-03-23 12:01:51] Sauvegarde activée: Non
+[2025-03-23 12:01:51] Vérification du chemin: ../images/cuisine-entiere-1.jpg
+[2025-03-23 12:01:51] Le fichier existe, remplacement activé
+[2025-03-23 12:01:51] L'image cible existe déjà
+[2025-03-23 12:01:51] Sauvegarde désactivée, l'ancienne image ne sera pas sauvegardée
+[2025-03-23 12:01:51] Ancienne image supprimée
+[2025-03-23 12:01:51] Nouvelle image utilisera le chemin: ../images/cuisine-entiere-1.jpg
+[2025-03-23 12:01:51] Tentative de déplacement du fichier téléchargé vers ../images/cuisine-entiere-1.jpg
+[2025-03-23 12:01:51] Déplacement réussi. Chemin de retour: images/cuisine-entiere-1.jpg
+[2025-03-23 12:04:14] Début du traitement d'upload
+[2025-03-23 12:04:14] Fichier reçu: cuisine-entiere-1.jpg (image/jpeg, 642721 bytes)
+[2025-03-23 12:04:14] Type MIME détecté: image/jpeg
+[2025-03-23 12:04:14] Chemin original reçu: images/cuisine-entiere-1.jpg
+[2025-03-23 12:04:14] Sauvegarde activée: Oui
+[2025-03-23 12:04:14] Vérification du chemin: ../images/cuisine-entiere-1.jpg
+[2025-03-23 12:04:14] Le fichier existe, remplacement activé
+[2025-03-23 12:04:14] L'image cible existe déjà
+[2025-03-23 12:04:14] Sauvegarde activée, création d'une copie
+[2025-03-23 12:04:14] Sauvegarde de l'image actuelle: ../images/cuisine-entiere-1.jpg vers ../assets/images/backup/cuisine-entiere-1_20250323_120414.jpg
+[2025-03-23 12:04:14] Ancienne image sauvegardée avec succès
+[2025-03-23 12:04:14] Ancienne image supprimée
+[2025-03-23 12:04:14] Nouvelle image utilisera le chemin: ../images/cuisine-entiere-1.jpg
+[2025-03-23 12:04:14] Tentative de déplacement du fichier téléchargé vers ../images/cuisine-entiere-1.jpg
+[2025-03-23 12:04:14] Déplacement réussi. Chemin de retour: images/cuisine-entiere-1.jpg
+[2025-03-23 12:12:07] Début du traitement d'upload
+[2025-03-23 12:12:07] Fichier reçu: hero.jpg (image/jpeg, 815636 bytes)
+[2025-03-23 12:12:07] Type MIME détecté: image/jpeg
+[2025-03-23 12:12:07] Chemin original reçu: images/hero.jpg
+[2025-03-23 12:12:07] Sauvegarde activée: Non
+[2025-03-23 12:12:07] Vérification du chemin: ../images/hero.jpg
+[2025-03-23 12:12:07] Le fichier existe, remplacement activé
+[2025-03-23 12:12:07] L'image cible existe déjà
+[2025-03-23 12:12:07] Sauvegarde désactivée, l'ancienne image ne sera pas sauvegardée
+[2025-03-23 12:12:07] Ancienne image supprimée
+[2025-03-23 12:12:07] Nouvelle image utilisera le chemin: ../images/hero.jpg
+[2025-03-23 12:12:07] Tentative de déplacement du fichier téléchargé vers ../images/hero.jpg
+[2025-03-23 12:12:07] Déplacement réussi. Chemin de retour: images/hero.jpg
+[2025-03-23 13:10:30] Début du traitement d'upload
+[2025-03-23 13:10:30] Fichier reçu: piscine-1.jpg (image/jpeg, 383337 bytes)
+[2025-03-23 13:10:30] Type MIME détecté: image/jpeg
+[2025-03-23 13:10:30] Chemin original reçu: images/piscine-1.jpg
+[2025-03-23 13:10:30] Sauvegarde activée: Non
+[2025-03-23 13:10:30] Vérification du chemin: ../images/piscine-1.jpg
+[2025-03-23 13:10:30] Le fichier existe, remplacement activé
+[2025-03-23 13:10:30] L'image cible existe déjà
+[2025-03-23 13:10:30] Sauvegarde désactivée, l'ancienne image ne sera pas sauvegardée
+[2025-03-23 13:10:30] Ancienne image supprimée
+[2025-03-23 13:10:30] Nouvelle image utilisera le chemin: ../images/piscine-1.jpg
+[2025-03-23 13:10:30] Tentative de déplacement du fichier téléchargé vers ../images/piscine-1.jpg
+[2025-03-23 13:10:30] Déplacement réussi. Chemin de retour: images/piscine-1.jpg
+[2025-03-23 13:55:08] Début du traitement d'upload
+[2025-03-23 13:55:08] Fichier reçu: cuisine-entiere-1.jpg (image/jpeg, 642721 bytes)
+[2025-03-23 13:55:08] Type MIME détecté: image/jpeg
+[2025-03-23 13:55:08] Chemin original reçu: images/cuisine-entiere-1.jpg
+[2025-03-23 13:55:08] Sauvegarde activée: Non
+[2025-03-23 13:55:08] Vérification du chemin: ../images/cuisine-entiere-1.jpg
+[2025-03-23 13:55:08] Le fichier existe, remplacement activé
+[2025-03-23 13:55:08] L'image cible existe déjà
+[2025-03-23 13:55:08] Sauvegarde désactivée, l'ancienne image ne sera pas sauvegardée
+[2025-03-23 13:55:08] Ancienne image supprimée
+[2025-03-23 13:55:08] Nouvelle image utilisera le chemin: ../images/cuisine-entiere-1.jpg
+[2025-03-23 13:55:08] Tentative de déplacement du fichier téléchargé vers ../images/cuisine-entiere-1.jpg
+[2025-03-23 13:55:08] Déplacement réussi. Chemin de retour: images/cuisine-entiere-1.jpg
+[2025-03-23 13:55:31] Début du traitement d'upload
+[2025-03-23 13:55:31] Fichier reçu: espace-repas-1.jpg (image/jpeg, 227438 bytes)
+[2025-03-23 13:55:31] Type MIME détecté: image/jpeg
+[2025-03-23 13:55:31] Chemin original reçu: images/espace-repas-1.jpg
+[2025-03-23 13:55:31] Sauvegarde activée: Non
+[2025-03-23 13:55:31] Vérification du chemin: ../images/espace-repas-1.jpg
+[2025-03-23 13:55:31] Le fichier existe, remplacement activé
+[2025-03-23 13:55:31] L'image cible existe déjà
+[2025-03-23 13:55:31] Sauvegarde désactivée, l'ancienne image ne sera pas sauvegardée
+[2025-03-23 13:55:31] Ancienne image supprimée
+[2025-03-23 13:55:31] Nouvelle image utilisera le chemin: ../images/espace-repas-1.jpg
+[2025-03-23 13:55:31] Tentative de déplacement du fichier téléchargé vers ../images/espace-repas-1.jpg
+[2025-03-23 13:55:31] Déplacement réussi. Chemin de retour: images/espace-repas-1.jpg

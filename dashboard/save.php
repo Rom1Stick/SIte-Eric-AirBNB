@@ -83,6 +83,11 @@ if (isset($data['images']) && is_array($data['images'])) {
     }
 }
 
+// S'assurer que le DOCTYPE est présent
+if (strpos($html_content, '<!DOCTYPE html>') === false) {
+    $html_content = '<!DOCTYPE html>' . $html_content;
+}
+
 // Sauvegarder le contenu HTML dans le fichier
 if (file_put_contents($file_path, $html_content)) {
     echo json_encode(['success' => true, 'message' => 'Modifications sauvegardées avec succès.']);

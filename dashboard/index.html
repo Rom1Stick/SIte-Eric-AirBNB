@@ -19,7 +19,8 @@
                 <ul>
                     <li><a href="#" data-section="hero" class="active"><i class="fas fa-home"></i> Hero</a></li>
                     <li><a href="#" data-section="lodge"><i class="fas fa-house"></i> Le Lodge</a></li>
-                    <li><a href="#" data-section="gallery"><i class="fas fa-images"></i> Galerie</a></li>
+                    <li><a href="#" data-section="carousel"><i class="fas fa-images"></i> Carrousel</a></li>
+                    <li><a href="#" data-section="gallery"><i class="fas fa-image"></i> Galerie Photos</a></li>
                     <li><a href="#" data-section="advantages"><i class="fas fa-star"></i> Avantages</a></li>
                     <li><a href="#" data-section="testimonials"><i class="fas fa-comment"></i> Témoignages</a></li>
                     <li><a href="#" data-section="host"><i class="fas fa-user"></i> Hôte</a></li>
@@ -140,9 +141,9 @@
                     </div>
                 </section>
 
-                <!-- Section Galerie -->
-                <section id="gallery-section" class="edit-section">
-                    <h2>Section Galerie</h2>
+                <!-- Section Carrousel -->
+                <section id="carousel-section" class="edit-section">
+                    <h2>Section Carrousel</h2>
                     <h3>Images du carrousel</h3>
                     <div class="repeatable-container" id="carousel-container">
                         <div class="repeatable-item">
@@ -150,13 +151,13 @@
                                 <label>Image URL</label>
                                 <input type="text" class="carousel-image-src" data-target=".carousel-item:nth-child(1) img" data-attr="src" value="images/cuisine-entiere-1.jpg">
                                 <div class="file-upload">
-                                    <label>Télécharger l'image</label>
+                                    <label>Changer l'image</label>
                                     <input type="file" class="carousel-image-upload" accept="image/*">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Texte alternatif</label>
-                                <input type="text" class="carousel-image-alt" data-target=".carousel-item:nth-child(1) img" data-attr="alt" value="Cuisine entière du lodge">
+                                <input type="text" class="carousel-image-alt" data-target=".carousel-item:nth-child(1) img" data-attr="alt" value="Cuisine entière">
                             </div>
                             <div class="form-group">
                                 <label>Légende</label>
@@ -169,7 +170,7 @@
                                 <label>Image URL</label>
                                 <input type="text" class="carousel-image-src" data-target=".carousel-item:nth-child(2) img" data-attr="src" value="images/espace-repas-1.jpg">
                                 <div class="file-upload">
-                                    <label>Télécharger l'image</label>
+                                    <label>Changer l'image</label>
                                     <input type="file" class="carousel-image-upload" accept="image/*">
                                 </div>
                             </div>
@@ -188,7 +189,7 @@
                                 <label>Image URL</label>
                                 <input type="text" class="carousel-image-src" data-target=".carousel-item:nth-child(3) img" data-attr="src" value="images/chambre-1-1.jpg">
                                 <div class="file-upload">
-                                    <label>Télécharger l'image</label>
+                                    <label>Changer l'image</label>
                                     <input type="file" class="carousel-image-upload" accept="image/*">
                                 </div>
                             </div>
@@ -207,7 +208,7 @@
                                 <label>Image URL</label>
                                 <input type="text" class="carousel-image-src" data-target=".carousel-item:nth-child(4) img" data-attr="src" value="images/chambre-2-1.jpg">
                                 <div class="file-upload">
-                                    <label>Télécharger l'image</label>
+                                    <label>Changer l'image</label>
                                     <input type="file" class="carousel-image-upload" accept="image/*">
                                 </div>
                             </div>
@@ -226,7 +227,7 @@
                                 <label>Image URL</label>
                                 <input type="text" class="carousel-image-src" data-target=".carousel-item:nth-child(5) img" data-attr="src" value="images/salle-de-bain-1.jpg">
                                 <div class="file-upload">
-                                    <label>Télécharger l'image</label>
+                                    <label>Changer l'image</label>
                                     <input type="file" class="carousel-image-upload" accept="image/*">
                                 </div>
                             </div>
@@ -245,7 +246,7 @@
                                 <label>Image URL</label>
                                 <input type="text" class="carousel-image-src" data-target=".carousel-item:nth-child(6) img" data-attr="src" value="images/jardin-1.jpg">
                                 <div class="file-upload">
-                                    <label>Télécharger l'image</label>
+                                    <label>Changer l'image</label>
                                     <input type="file" class="carousel-image-upload" accept="image/*">
                                 </div>
                             </div>
@@ -264,7 +265,7 @@
                                 <label>Image URL</label>
                                 <input type="text" class="carousel-image-src" data-target=".carousel-item:nth-child(7) img" data-attr="src" value="images/piscine-1.jpg">
                                 <div class="file-upload">
-                                    <label>Télécharger l'image</label>
+                                    <label>Changer l'image</label>
                                     <input type="file" class="carousel-image-upload" accept="image/*">
                                 </div>
                             </div>
@@ -280,28 +281,297 @@
                         <!-- Les autres éléments du carrousel peuvent être ajoutés dynamiquement -->
                         <button class="btn-add" id="add-carousel-item"><i class="fas fa-plus"></i> Ajouter une image</button>
                     </div>
-
-                    <h3>Galerie Photos</h3>
+                </section>
+                
+                <!-- Section Galerie Photos -->
+                <section id="gallery-section" class="edit-section">
+                    <h2>Section Galerie Photos</h2>
                     <div class="repeatable-container" id="gallery-items-container">
                         <div class="repeatable-item">
                             <div class="form-group">
                                 <label>Image URL</label>
                                 <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(1) img" data-attr="src" value="images/cuisine-entiere-1.jpg">
                                 <div class="file-upload">
-                                    <label>Télécharger l'image</label>
+                                    <label>Changer l'image</label>
                                     <input type="file" class="gallery-image-upload" accept="image/*">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Texte alternatif</label>
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(1) .gallery-caption" value="Cuisine entière du lodge avec coin repas et vue sur le jardin">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
                                 <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(1) img" data-attr="alt" value="Cuisine entière du lodge">
+                            </div>
+                        </div>
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(2) img" data-attr="src" value="images/espace-repas-1.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Légende</label>
-                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(1) .gallery-caption" value="Cuisine entière">
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(2) .gallery-caption" value="Espace repas confortable avec table et chaises pour 4 personnes">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(2) img" data-attr="alt" value="Espace repas confortable">
                             </div>
                         </div>
-                        <!-- Les autres éléments de la galerie peuvent être ajoutés dynamiquement -->
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(3) img" data-attr="src" value="images/espace-repas-2.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(3) .gallery-caption" value="Vue complémentaire de l'espace repas avec décoration et ambiance chaleureuse">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(3) img" data-attr="alt" value="Vue complémentaire de l'espace repas">
+                            </div>
+                        </div>
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(4) img" data-attr="src" value="images/chambre-1-1.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(4) .gallery-caption" value="Chambre 1 avec deux lits simples et rangements intégrés">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(4) img" data-attr="alt" value="Chambre 1 avec deux lits simples">
+                            </div>
+                        </div>
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(5) img" data-attr="src" value="images/chambre-1-2.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(5) .gallery-caption" value="Chambre 1 avec vue sur la fenêtre et décoration soignée">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(5) img" data-attr="alt" value="Autre vue de la chambre 1">
+                            </div>
+                        </div>
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(6) img" data-attr="src" value="images/chambre-1-3.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(6) .gallery-caption" value="Détail de la chambre 1 avec table de nuit et éclairage d'ambiance">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(6) img" data-attr="alt" value="Détail de la chambre 1">
+                            </div>
+                        </div>
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(7) img" data-attr="src" value="images/chambre-2-1.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(7) .gallery-caption" value="Chambre 2 avec lit double et rangements intégrés">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(7) img" data-attr="alt" value="Chambre 2 avec lit double">
+                            </div>
+                        </div>
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(8) img" data-attr="src" value="images/chambre-2-2.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(8) .gallery-caption" value="Chambre 2 avec coin bureau et décoration élégante">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(8) img" data-attr="alt" value="Vue complémentaire de la chambre 2">
+                            </div>
+                        </div>
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(9) img" data-attr="src" value="images/salle-de-bain-1.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(9) .gallery-caption" value="Salle de bain moderne avec douche et lavabo design">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(9) img" data-attr="alt" value="Salle de bain moderne">
+                            </div>
+                        </div>
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(10) img" data-attr="src" value="images/salle-de-bain-2.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(10) .gallery-caption" value="Détail de la salle de bain avec WC et rangements intégrés">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(10) img" data-attr="alt" value="Détail de la salle de bain">
+                            </div>
+                        </div>
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(11) img" data-attr="src" value="images/jardin-1.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(11) .gallery-caption" value="Jardin verdoyant avec espace de détente et mobilier confortable">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(11) img" data-attr="alt" value="Vue du jardin verdoyant">
+                            </div>
+                        </div>
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(12) img" data-attr="src" value="images/jardin-2.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(12) .gallery-caption" value="Jardin avec vue sur la piscine et la nature environnante">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(12) img" data-attr="alt" value="Autre vue du jardin">
+                            </div>
+                        </div>
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(13) img" data-attr="src" value="images/piscine-1.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(13) .gallery-caption" value="Piscine privée avec transats et parasols pour un bain de soleil confortable">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(13) img" data-attr="alt" value="Piscine privée">
+                            </div>
+                        </div>
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(14) img" data-attr="src" value="images/piscine-2.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(14) .gallery-caption" value="Vue panoramique de la piscine et du jardin verdoyant">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(14) img" data-attr="alt" value="Vue de la piscine depuis le jardin">
+                            </div>
+                        </div>
+
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="gallery-image-src" data-target=".gallery-item:nth-child(15) img" data-attr="src" value="images/piscine-3.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="gallery-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Légende</label>
+                                <input type="text" class="gallery-caption" data-target=".gallery-item:nth-child(15) .gallery-caption" value="Piscine illuminée en soirée pour des moments de détente magiques">
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif (SEO & Accessibilité)</label>
+                                <input type="text" class="gallery-image-alt" data-target=".gallery-item:nth-child(15) img" data-attr="alt" value="Vue nocturne de la piscine">
+                            </div>
+                        </div>
+
                         <button class="btn-add" id="add-gallery-item"><i class="fas fa-plus"></i> Ajouter une image</button>
                     </div>
                 </section>
@@ -426,7 +696,7 @@
                         <label for="host-image">Photo de l'hôte (URL)</label>
                         <input type="text" id="host-image" data-target=".host-image img" data-attr="src" value="images/host.jpg">
                         <div class="file-upload">
-                            <label for="host-image-upload">ou télécharger une image</label>
+                            <label for="host-image-upload">Changer l'image</label>
                             <input type="file" id="host-image-upload" accept="image/*">
                         </div>
                     </div>
@@ -451,7 +721,7 @@
                                 <label>Image URL</label>
                                 <input type="text" class="activity-image-src" data-target=".activity-card:nth-child(1) img" data-attr="src" value="images/cascade-1.jpg">
                                 <div class="file-upload">
-                                    <label>Télécharger l'image</label>
+                                    <label>Changer l'image</label>
                                     <input type="file" class="activity-image-upload" accept="image/*">
                                 </div>
                             </div>
@@ -512,6 +782,66 @@
     <div id="loading-overlay" style="display: none;">
         <div class="spinner"></div>
         <p>Traitement en cours...</p>
+    </div>
+
+    <!-- Modal de sélection d'images -->
+    <div id="image-selector-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Sélection d'images</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="upload">Télécharger une image</button>
+                <button class="modal-tab" data-tab="backup">Images sauvegardées</button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-tab active">
+                    <div class="form-group">
+                        <label for="modal-file-upload">Choisir une image</label>
+                        <input type="file" id="modal-file-upload" accept="image/*">
+                    </div>
+                    <div id="upload-preview" style="margin-top: 20px; display: none;">
+                        <h4>Aperçu</h4>
+                        <img src="" alt="Aperçu de l'image" style="max-width: 100%; max-height: 300px;">
+                    </div>
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label style="display: flex; align-items: center;">
+                            <input type="checkbox" id="backup-checkbox" style="margin-right: 10px;">
+                            Sauvegarder l'image actuelle
+                        </label>
+                        <p style="font-size: 12px; color: #666; margin-top: 5px;">Si cette option est cochée, l'image actuelle sera enregistrée dans le dossier de backup avant d'être remplacée.</p>
+                    </div>
+                </div>
+                <div class="backup-tab">
+                    <div id="backup-images-loading">Chargement des images sauvegardées...</div>
+                    <div id="backup-images-grid" class="backup-images-grid"></div>
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label style="display: flex; align-items: center;">
+                            <input type="checkbox" id="backup-checkbox-restore" style="margin-right: 10px;">
+                            Sauvegarder l'image actuelle
+                        </label>
+                        <p style="font-size: 12px; color: #666; margin-top: 5px;">Si cette option est cochée, l'image actuelle sera enregistrée dans le dossier de backup avant d'être remplacée.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-cancel" class="btn-secondary">Annuler</button>
+                <button id="modal-confirm" class="btn-primary">Confirmer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Div pour les notifications -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Modal pour la galerie -->
+    <div id="gallery-modal" class="gallery-modal">
+        <span class="gallery-modal-close">&times;</span>
+        <img id="gallery-modal-img" src="" alt="">
+        <div id="gallery-modal-caption"></div>
+        <button class="gallery-modal-prev">&lt;</button>
+        <button class="gallery-modal-next">&gt;</button>
     </div>
 
     <script src="dashboard.js"></script>
