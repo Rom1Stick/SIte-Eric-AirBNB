@@ -1,0 +1,10 @@
+{
+    "users": [
+        {
+            "username": "admin",
+            "password_hash": "$2y$12$Q2AHgwYaIJTo4rCsKYCMmOW4XxzMKgMkAQDOVHlZXk.GZdJm2fUmO",
+            "email": "admin@example.com",
+            "last_login": "2025-03-24 21:33:08"
+        }
+    ]
+}

@@ -538,6 +538,9 @@ function handleImageUpload(event, inputId, inputElement = null) {
 function initApplyChanges() {
     document.getElementById('apply-changes').addEventListener('click', function() {
         applyChangesToPreview();
+        
+        // Afficher une notification de succès
+        showNotification('Les modifications ont été appliquées avec succès !', 'success');
     });
 }
 
@@ -660,6 +663,7 @@ const saveConfirmationCheckbox = document.getElementById('save-confirmation-chec
 const saveConfirmButton = document.getElementById('save-confirm');
 const saveCancelButton = document.getElementById('save-cancel');
 const saveChangesButton = document.getElementById('save-changes');
+const saveChangesHeaderButton = document.getElementById('save-changes-header');
 
 // Fonction pour afficher la modal de confirmation
 function showSaveConfirmationModal() {
@@ -674,6 +678,10 @@ function hideSaveConfirmationModal() {
     saveConfirmationCheckbox.checked = false;
     saveConfirmButton.disabled = true;
 }
+
+// Écouteur d'événement pour les boutons de sauvegarde
+saveChangesButton.addEventListener('click', showSaveConfirmationModal);
+saveChangesHeaderButton.addEventListener('click', showSaveConfirmationModal);
 
 // Écouteur d'événement pour la case à cocher
 saveConfirmationCheckbox.addEventListener('change', function() {
