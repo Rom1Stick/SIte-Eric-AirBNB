@@ -652,9 +652,10 @@ function updateStars(starsElement, count) {
 
 // Fonction pour initialiser la sauvegarde des modifications
 function initSaveChanges() {
-    document.getElementById('save-changes').addEventListener('click', function() {
-        showSaveConfirmationModal();
-    });
+    const saveButton = document.getElementById('save-changes');
+    if (saveButton) {
+        saveButton.addEventListener('click', showSaveConfirmationModal);
+    }
 }
 
 // Gestion de la modal de confirmation de sauvegarde
@@ -663,7 +664,6 @@ const saveConfirmationCheckbox = document.getElementById('save-confirmation-chec
 const saveConfirmButton = document.getElementById('save-confirm');
 const saveCancelButton = document.getElementById('save-cancel');
 const saveChangesButton = document.getElementById('save-changes');
-const saveChangesHeaderButton = document.getElementById('save-changes-header');
 
 // Fonction pour afficher la modal de confirmation
 function showSaveConfirmationModal() {
@@ -678,10 +678,6 @@ function hideSaveConfirmationModal() {
     saveConfirmationCheckbox.checked = false;
     saveConfirmButton.disabled = true;
 }
-
-// Écouteur d'événement pour les boutons de sauvegarde
-saveChangesButton.addEventListener('click', showSaveConfirmationModal);
-saveChangesHeaderButton.addEventListener('click', showSaveConfirmationModal);
 
 // Écouteur d'événement pour la case à cocher
 saveConfirmationCheckbox.addEventListener('change', function() {
