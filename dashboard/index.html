@@ -62,6 +62,27 @@
                         <textarea id="hero-description" data-target=".hero-content p">Piscine privée, cadre verdoyant, confort et sérénité à deux pas du village</textarea>
                     </div>
                     <div class="form-group">
+                        <label>Capacité du Lodge</label>
+                        <div class="capacity-inputs">
+                            <div class="capacity-input">
+                                <label for="capacity-guests"><i class="fas fa-user"></i> Voyageurs</label>
+                                <input type="number" id="capacity-guests" name="guests" min="0" max="10" value="4">
+                            </div>
+                            <div class="capacity-input">
+                                <label for="capacity-rooms"><i class="fas fa-door-open"></i> Chambres</label>
+                                <input type="number" id="capacity-rooms" name="rooms" min="0" max="5" value="2">
+                            </div>
+                            <div class="capacity-input">
+                                <label for="capacity-beds"><i class="fas fa-bed"></i> Lits</label>
+                                <input type="number" id="capacity-beds" name="beds" min="0" max="10" value="3">
+                            </div>
+                            <div class="capacity-input">
+                                <label for="capacity-baths"><i class="fas fa-bath"></i> Salles de bain</label>
+                                <input type="number" id="capacity-baths" name="bathrooms" min="0" max="3" value="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="hero-image">Image d'arrière-plan (URL)</label>
                         <input type="text" id="hero-image" data-target=".hero" data-attr="background-image" value="url('../images/hero.jpg')">
                         <div class="file-upload">

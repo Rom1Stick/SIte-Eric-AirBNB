@@ -154,3 +154,31 @@
 [2025-03-23 13:55:31] Nouvelle image utilisera le chemin: ../images/espace-repas-1.jpg
 [2025-03-23 13:55:31] Tentative de déplacement du fichier téléchargé vers ../images/espace-repas-1.jpg
 [2025-03-23 13:55:31] Déplacement réussi. Chemin de retour: images/espace-repas-1.jpg
+[2025-03-26 20:37:16] Début du traitement d'upload
+[2025-03-26 20:37:16] Fichier reçu: images.jpg (image/jpeg, 11375 bytes)
+[2025-03-26 20:37:16] Type MIME détecté: image/jpeg
+[2025-03-26 20:37:16] Chemin original reçu: images/espace-repas-1.jpg
+[2025-03-26 20:37:16] Sauvegarde activée: Oui
+[2025-03-26 20:37:16] Vérification du chemin: ../images/espace-repas-1.jpg
+[2025-03-26 20:37:16] Le fichier existe, remplacement activé
+[2025-03-26 20:37:16] L'image cible existe déjà
+[2025-03-26 20:37:16] Sauvegarde activée, création d'une copie
+[2025-03-26 20:37:16] Sauvegarde de l'image actuelle: ../images/espace-repas-1.jpg vers ../assets/images/backup/espace-repas-1_20250326_203716.jpg
+[2025-03-26 20:37:16] Ancienne image sauvegardée avec succès
+[2025-03-26 20:37:16] Ancienne image supprimée
+[2025-03-26 20:37:16] Nouvelle image utilisera le chemin: ../images/espace-repas-1.jpg
+[2025-03-26 20:37:16] Tentative de déplacement du fichier téléchargé vers ../images/espace-repas-1.jpg
+[2025-03-26 20:37:16] Déplacement réussi. Chemin de retour: images/espace-repas-1.jpg
+[2025-03-26 20:56:36] Début du traitement d'upload
+[2025-03-26 20:56:36] Fichier reçu: salle-de-bain-1.jpg (image/jpeg, 365152 bytes)
+[2025-03-26 20:56:36] Type MIME détecté: image/jpeg
+[2025-03-26 20:56:36] Chemin original reçu: images/salle-de-bain-1.jpg
+[2025-03-26 20:56:36] Sauvegarde activée: Non
+[2025-03-26 20:56:36] Vérification du chemin: ../images/salle-de-bain-1.jpg
+[2025-03-26 20:56:36] Le fichier existe, remplacement activé
+[2025-03-26 20:56:36] L'image cible existe déjà
+[2025-03-26 20:56:36] Sauvegarde désactivée, l'ancienne image ne sera pas sauvegardée
+[2025-03-26 20:56:36] Ancienne image supprimée
+[2025-03-26 20:56:36] Nouvelle image utilisera le chemin: ../images/salle-de-bain-1.jpg
+[2025-03-26 20:56:36] Tentative de déplacement du fichier téléchargé vers ../images/salle-de-bain-1.jpg
+[2025-03-26 20:56:36] Déplacement réussi. Chemin de retour: images/salle-de-bain-1.jpg

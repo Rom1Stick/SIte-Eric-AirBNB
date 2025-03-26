@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initUploadFunctionality();
     initApplyChanges();
     initSaveChanges();
+    initCapacityHandlers();
     
     // Intercepter tous les clics sur les labels de téléchargement d'image
     const fileUploadLabels = document.querySelectorAll('.file-upload label');
@@ -1583,5 +1584,66 @@ function saveChangesToFile() {
         
         console.error('Erreur lors de la sauvegarde:', e);
         showNotification('Erreur lors de la préparation des données. Vérifiez la console.', 'error');
+    }
+}
+
+// Fonction pour initialiser les gestionnaires d'événements de la capacité
+function initCapacityHandlers() {
+    const capacityInputs = document.querySelectorAll('.capacity-input input[type="number"]');
+    
+    capacityInputs.forEach(input => {
+        // Définir les valeurs minimales et maximales
+        const min = parseInt(input.getAttribute('min')) || 1;
+        const max = parseInt(input.getAttribute('max')) || 10;
+        
+        // Mettre à jour la valeur initiale si nécessaire
+        if (!input.value) {
+            input.value = min;
+        }
+        
+        input.addEventListener('input', function(e) {
+            let value = parseInt(this.value);
+            
+            // Permettre un champ vide
+            if (this.value === '') {
+                updateCapacityDisplay();
+                return;
+            }
+            
+            // Valider les limites
+            if (value < min) {
+                value = min;
+                this.value = min;
+            }
+            if (value > max) {
+                value = max;
+                this.value = max;
+            }
+            
+            updateCapacityDisplay();
+        });
+        
+        // Empêcher la saisie de valeurs non numériques
+        input.addEventListener('keypress', function(e) {
+            if (!/[0-9]/.test(e.key)) {
+                e.preventDefault();
+            }
+        });
+    });
+    
+    // Fonction pour mettre à jour l'affichage de la capacité
+    function updateCapacityDisplay() {
+        const previewFrame = document.getElementById('preview-frame');
+        const frameDoc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+        const capacityText = frameDoc.querySelector('.lodge-capacity p');
+        
+        if (capacityText) {
+            const guests = document.querySelector('input[name="guests"]').value || '4';
+            const rooms = document.querySelector('input[name="rooms"]').value || '2';
+            const beds = document.querySelector('input[name="beds"]').value || '3';
+            const bathrooms = document.querySelector('input[name="bathrooms"]').value || '1';
+            
+            capacityText.innerHTML = `<i class="fas fa-user"></i> ${guests} voyageurs <i class="fas fa-door-open"></i> ${rooms} chambres <i class="fas fa-bed"></i> ${beds} lits <i class="fas fa-bath"></i> ${bathrooms} salle de bain`;
+        }
     }
 } 
