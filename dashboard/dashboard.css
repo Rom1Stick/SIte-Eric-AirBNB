@@ -2246,4 +2246,66 @@ body {
 #hero-section textarea:focus {
     border-color: var(--secondary-color);
     box-shadow: 0 0 0 2px rgba(244, 162, 97, 0.1);
+}
+
+/* Style pour les champs URL désactivés */
+input[type="text"][data-attr="src"],
+input[type="text"][data-attr="background-image"],
+input[type="text"].carousel-image-src,
+input[type="text"].gallery-image-src {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    color: #666;
+    pointer-events: none;
+}
+
+/* Style pour les labels des champs URL */
+.form-group label[for$="-image"],
+.form-group label[for*="image-src"] {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group label[for$="-image"]::after,
+.form-group label[for*="image-src"]::after {
+    content: '🔒';
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Style amélioré pour les boutons d'upload */
+.file-upload {
+    margin-top: 8px !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+
+.file-upload label {
+    opacity: 1 !important;
+    pointer-events: all !important;
+    background: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 20px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+.file-upload label:hover {
+    background: var(--primary-dark) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Amélioration visuelle pour indiquer que seul l'upload est possible */
+.file-upload::before {
+    content: 'Utilisez le bouton ci-dessous pour changer l\'image';
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+    font-style: italic;
 } 
