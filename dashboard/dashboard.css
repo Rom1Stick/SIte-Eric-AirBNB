@@ -2308,4 +2308,137 @@ input[type="text"].gallery-image-src {
     color: #666;
     margin-bottom: 8px;
     font-style: italic;
+}
+
+/* Styles pour les aperçus d'images */
+.image-preview {
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    max-width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.image-preview:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 150px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+/* Styles spécifiques pour les aperçus dans la section des activités */
+#activities-container .image-preview {
+    margin: 12px 0;
+    border-color: var(--secondary-color);
+}
+
+#activities-container .image-preview img {
+    max-height: 180px;
+}
+
+/* Améliorations pour la section des activités */
+#activities-section .repeatable-item {
+    border-left: 3px solid var(--secondary-color);
+}
+
+#activities-section .repeatable-item:hover {
+    border-left-color: var(--secondary-dark);
+}
+
+#activities-section .form-group label {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+#activities-section .activity-title {
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+/* Styles pour les indications de texte alternatif dans les activités */
+#activities-section .alt-text-hint {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    font-style: italic;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#activities-section .alt-text-hint:hover {
+    color: var(--secondary-color);
+}
+
+#activities-section .alt-text-hint i {
+    margin-right: 5px;
+    color: var(--secondary-color);
+}
+
+/* Modal de règles pour texte alternatif */
+#alt-text-guidelines-modal .modal-container {
+    max-width: 700px;
+}
+
+#alt-text-guidelines-modal .modal-header h3 {
+    color: var(--primary-dark);
+}
+
+#alt-text-guidelines-modal .modal-header h3 i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+.guidelines-content h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.guidelines-content ul, 
+.guidelines-content ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.guidelines-content li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.alt-text-examples {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.alt-text-examples th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+.alt-text-examples td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.alt-text-examples tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.alt-text-examples tr:hover {
+    background-color: rgba(244, 162, 97, 0.1);
 } 

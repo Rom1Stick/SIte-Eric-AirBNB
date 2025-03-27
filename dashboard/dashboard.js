@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initApplyChanges();
     initSaveChanges();
     initCapacityHandlers();
+    initImagesDisplay();
+    initAltTextGuidelines();
     
     // Intercepter tous les clics sur les labels de téléchargement d'image
     const fileUploadLabels = document.querySelectorAll('.file-upload label');
@@ -134,6 +136,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     initGallery();
+
+    // S'assurer que nous avons un bouton pour ajouter des activités
+    if (!document.getElementById('add-activity-item')) {
+        const activitiesContainer = document.getElementById('activities-container');
+        if (activitiesContainer) {
+            const addButton = document.createElement('button');
+            addButton.className = 'btn-add';
+            addButton.id = 'add-activity-item';
+            addButton.innerHTML = '<i class="fas fa-plus"></i> Ajouter une activité';
+            addButton.addEventListener('click', addActivityItem);
+            activitiesContainer.appendChild(addButton);
+        }
+    } else {
+        document.getElementById('add-activity-item').addEventListener('click', addActivityItem);
+    }
 });
 
 // Navigation dans le dashboard
@@ -1646,4 +1663,154 @@ function initCapacityHandlers() {
             capacityText.innerHTML = `<i class="fas fa-user"></i> ${guests} voyageurs <i class="fas fa-door-open"></i> ${rooms} chambres <i class="fas fa-bed"></i> ${beds} lits <i class="fas fa-bath"></i> ${bathrooms} salle de bain`;
         }
     }
+}
+
+// Fonction pour initialiser l'affichage des images
+function initImagesDisplay() {
+    // Initialiser les aperçus d'images pour toutes les sections
+    const imageSrcInputs = document.querySelectorAll('.carousel-image-src, .gallery-image-src, .activity-image-src');
+    
+    imageSrcInputs.forEach(input => {
+        if (input.value) {
+            // Créer ou mettre à jour l'aperçu d'image
+            const container = input.closest('.repeatable-item');
+            
+            // Vérifier si un aperçu existe déjà
+            let previewElement = container.querySelector('.image-preview');
+            
+            if (!previewElement) {
+                // Créer un nouvel élément d'aperçu
+                previewElement = document.createElement('div');
+                previewElement.className = 'image-preview';
+                previewElement.innerHTML = `<img src="${input.value}" alt="Aperçu de l'image">`;
+                
+                // Insérer l'aperçu après le champ d'URL
+                input.parentNode.insertBefore(previewElement, input.nextSibling);
+            } else {
+                // Mettre à jour l'image existante
+                const img = previewElement.querySelector('img');
+                if (img) {
+                    img.src = input.value;
+                }
+            }
+        }
+    });
+    
+    // Ajouter des écouteurs d'événements pour mettre à jour l'aperçu quand l'URL change
+    imageSrcInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            const container = this.closest('.repeatable-item');
+            let previewElement = container.querySelector('.image-preview');
+            
+            if (this.value) {
+                if (!previewElement) {
+                    previewElement = document.createElement('div');
+                    previewElement.className = 'image-preview';
+                    previewElement.innerHTML = `<img src="${this.value}" alt="Aperçu de l'image">`;
+                    this.parentNode.insertBefore(previewElement, this.nextSibling);
+                } else {
+                    const img = previewElement.querySelector('img');
+                    if (img) {
+                        img.src = this.value;
+                    }
+                }
+            } else if (previewElement) {
+                previewElement.remove();
+            }
+        });
+    });
+}
+
+// Fonction pour initialiser la fenêtre modale des règles de texte alternatif
+function initAltTextGuidelines() {
+    const altTextHints = document.querySelectorAll('#activities-section .alt-text-hint');
+    const altTextModal = document.getElementById('alt-text-guidelines-modal');
+    const closeButtons = altTextModal.querySelectorAll('.modal-close, .alt-text-close');
+    
+    // Ajouter des écouteurs d'événements pour ouvrir la modal lors du clic sur les indications
+    altTextHints.forEach(hint => {
+        hint.addEventListener('click', function() {
+            altTextModal.classList.add('active');
+        });
+    });
+    
+    // Ajouter des écouteurs d'événements pour fermer la modal
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            altTextModal.classList.remove('active');
+        });
+    });
+    
+    // Fermer la modal si on clique en dehors
+    altTextModal.addEventListener('click', function(e) {
+        if (e.target === altTextModal) {
+            altTextModal.classList.remove('active');
+        }
+    });
+}
+
+// Fonction pour ajouter un nouvel élément d'activité
+function addActivityItem() {
+    const container = document.getElementById('activities-container');
+    const items = container.querySelectorAll('.repeatable-item');
+    const newIndex = items.length + 1;
+    
+    const newItem = document.createElement('div');
+    newItem.className = 'repeatable-item';
+    newItem.innerHTML = `
+        <div class="form-group">
+            <label>Image URL</label>
+            <input type="text" class="activity-image-src" data-target=".activity-card:nth-child(${newIndex}) img" data-attr="src" value="">
+            <div class="file-upload">
+                <label>Changer l'image</label>
+                <input type="file" class="activity-image-upload" accept="image/*">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Titre</label>
+            <input type="text" class="activity-title" data-target=".activity-card:nth-child(${newIndex}) h4" value="">
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea class="activity-desc" data-target=".activity-card:nth-child(${newIndex}) p"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Texte alternatif</label>
+            <input type="text" class="activity-image-alt" data-target=".activity-card:nth-child(${newIndex}) img" data-attr="alt" value="">
+            <div class="alt-text-hint">
+                <i class="fas fa-info-circle"></i> Décrivez l'image de façon concise et précise pour l'accessibilité et le référencement
+            </div>
+        </div>
+        <button class="btn-remove"><i class="fas fa-trash"></i> Supprimer</button>
+    `;
+    
+    // Attacher l'événement de suppression
+    const removeBtn = newItem.querySelector('.btn-remove');
+    attachRemoveItemEvent(removeBtn);
+    
+    // Ajouter les écouteurs pour les fonctionnalités d'image
+    const fileInput = newItem.querySelector('.activity-image-upload');
+    fileInput.addEventListener('change', function() {
+        const inputElement = this.closest('.repeatable-item').querySelector('.activity-image-src');
+        handleImageUpload(this, null, inputElement);
+    });
+    
+    // Ajouter l'écouteur d'événement pour l'indication de texte alternatif
+    const altTextHint = newItem.querySelector('.alt-text-hint');
+    if (altTextHint) {
+        altTextHint.addEventListener('click', function() {
+            const altTextModal = document.getElementById('alt-text-guidelines-modal');
+            if (altTextModal) altTextModal.classList.add('active');
+        });
+    }
+    
+    // Insérer avant le bouton d'ajout
+    const addButton = document.getElementById('add-activity-item');
+    container.insertBefore(newItem, addButton);
+    
+    // Initialiser l'aperçu de l'image s'il y a une URL d'image
+    initImagesDisplay();
+    
+    // Mettre à jour les indices
+    updateElementIndices();
 } 

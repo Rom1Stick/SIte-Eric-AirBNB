@@ -701,6 +701,10 @@
                 <section id="host-section" class="edit-section">
                     <h2>Section Hôte</h2>
                     <div class="form-group">
+                        <label for="host-title">Titre de section</label>
+                        <input type="text" id="host-title" data-target=".host-info h3" value="Votre Hôte Superhost">
+                    </div>
+                    <div class="form-group">
                         <label for="host-name">Nom de l'hôte</label>
                         <input type="text" id="host-name" data-target=".host-details h4" value="Éric">
                     </div>
@@ -746,10 +750,6 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Texte alternatif</label>
-                                <input type="text" class="activity-image-alt" data-target=".activity-card:nth-child(1) img" data-attr="alt" value="Cascade de Sillans">
-                            </div>
-                            <div class="form-group">
                                 <label>Titre</label>
                                 <input type="text" class="activity-title" data-target=".activity-card:nth-child(1) h4" value="Cascade de Sillans">
                             </div>
@@ -757,7 +757,90 @@
                                 <label>Description</label>
                                 <textarea class="activity-desc" data-target=".activity-card:nth-child(1) p">À seulement 10 minutes à pied, découvrez cette magnifique chute d'eau de 42 mètres de haut.</textarea>
                             </div>
+                            <div class="form-group">
+                                <label>Texte alternatif</label>
+                                <input type="text" class="activity-image-alt" data-target=".activity-card:nth-child(1) img" data-attr="alt" value="Cascade de Sillans">
+                                <div class="alt-text-hint">
+                                    <i class="fas fa-info-circle"></i> Décrivez l'image de façon concise et précise pour l'accessibilité et le référencement
+                                </div>
+                            </div>
                         </div>
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="activity-image-src" data-target=".activity-card:nth-child(2) img" data-attr="src" value="images/villages.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="activity-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Titre</label>
+                                <input type="text" class="activity-title" data-target=".activity-card:nth-child(2) h4" value="Villages Pittoresques">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="activity-desc" data-target=".activity-card:nth-child(2) p">Visitez les charmants villages de Cotignac, Tourtour ou Villecroze à moins de 15 minutes en voiture.</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif</label>
+                                <input type="text" class="activity-image-alt" data-target=".activity-card:nth-child(2) img" data-attr="alt" value="Villages pittoresques de Provence">
+                                <div class="alt-text-hint">
+                                    <i class="fas fa-info-circle"></i> Décrivez l'image de façon concise et précise pour l'accessibilité et le référencement
+                                </div>
+                            </div>
+                        </div>
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="activity-image-src" data-target=".activity-card:nth-child(3) img" data-attr="src" value="images/marche.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="activity-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Titre</label>
+                                <input type="text" class="activity-title" data-target=".activity-card:nth-child(3) h4" value="Marchés Provençaux">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="activity-desc" data-target=".activity-card:nth-child(3) p">Immergez-vous dans l'ambiance locale et découvrez les produits du terroir dans les marchés environnants.</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif</label>
+                                <input type="text" class="activity-image-alt" data-target=".activity-card:nth-child(3) img" data-attr="alt" value="Marchés provençaux locaux">
+                                <div class="alt-text-hint">
+                                    <i class="fas fa-info-circle"></i> Décrivez l'image de façon concise et précise pour l'accessibilité et le référencement
+                                </div>
+                            </div>
+                        </div>
+                        <div class="repeatable-item">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" class="activity-image-src" data-target=".activity-card:nth-child(4) img" data-attr="src" value="images/velo.jpg">
+                                <div class="file-upload">
+                                    <label>Changer l'image</label>
+                                    <input type="file" class="activity-image-upload" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Titre</label>
+                                <input type="text" class="activity-title" data-target=".activity-card:nth-child(4) h4" value="Balades à Vélo">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="activity-desc" data-target=".activity-card:nth-child(4) p">Explorez les magnifiques paysages provençaux grâce aux nombreux circuits cyclables adaptés à tous les niveaux.</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Texte alternatif</label>
+                                <input type="text" class="activity-image-alt" data-target=".activity-card:nth-child(4) img" data-attr="alt" value="Balades à vélo en Provence">
+                                <div class="alt-text-hint">
+                                    <i class="fas fa-info-circle"></i> Décrivez l'image de façon concise et précise pour l'accessibilité et le référencement
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-add" id="add-activity-item"><i class="fas fa-plus"></i> Ajouter une activité</button>
                     </div>
                 </section>
 
@@ -888,6 +971,53 @@
                 <button id="save-confirm" class="btn-primary" disabled>
                     <i class="fas fa-save"></i> Sauvegarder les changements
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ajout des règles pour le texte alternatif dans la section activités -->
+    <div id="alt-text-guidelines-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3><i class="fas fa-info-circle"></i> Règles pour le texte alternatif</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="guidelines-content">
+                    <h4>Pourquoi le texte alternatif est important ?</h4>
+                    <ul>
+                        <li><strong>Accessibilité</strong> : Les personnes malvoyantes utilisent des lecteurs d'écran qui lisent le texte alternatif</li>
+                        <li><strong>SEO</strong> : Les moteurs de recherche utilisent ces textes pour comprendre les images</li>
+                        <li><strong>Affichage de secours</strong> : Si l'image ne charge pas, le texte alternatif s'affiche</li>
+                    </ul>
+                    
+                    <h4>Comment rédiger un bon texte alternatif ?</h4>
+                    <ol>
+                        <li>Soyez <strong>descriptif et concis</strong> (moins de 125 caractères)</li>
+                        <li>Incluez des <strong>mots-clés pertinents</strong> pour le référencement</li>
+                        <li>Décrivez ce que montre l'image, pas ce qu'elle est ("Cascade de Sillans" plutôt que "Photo d'une cascade")</li>
+                        <li>Pensez à l'<strong>expérience utilisateur</strong> : qu'est-ce qu'une personne qui ne voit pas l'image devrait savoir ?</li>
+                    </ol>
+                    
+                    <h4>Exemples pour les activités</h4>
+                    <table class="alt-text-examples">
+                        <tr>
+                            <th>Bon exemple</th>
+                            <th>Mauvais exemple</th>
+                        </tr>
+                        <tr>
+                            <td>"Cascade de Sillans avec sa chute d'eau de 42 mètres"</td>
+                            <td>"Image 1" ou "Photo cascade"</td>
+                        </tr>
+                        <tr>
+                            <td>"Village provençal de Cotignac avec ses maisons de pierre"</td>
+                            <td>"Village" ou "Photo"</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary alt-text-close">J'ai compris</button>
             </div>
         </div>
     </div>
